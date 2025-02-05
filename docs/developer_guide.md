@@ -303,3 +303,40 @@ Developer Guide
                 Resets the 'visited' attribute of all cells in the maze to False.
                 This method is used to prepare the maze for a new maze generation or a new maze solving process.
                 It iterates through all cells in the maze and sets their 'visited' attribute to False.
+
+
+    Solving the Maze
+
+        _solve_r(self, i, j)
+
+            Recursively attempts to find a path from the starting cell (0,0) to the exit (num_cols-1, num_rows-1) using depth-first search.
+
+            Parameters:
+
+                i (int): Column index of the current cell.
+
+                j (int): Row index of the current cell.
+
+            Process:
+
+                Marks the current cell as visited.
+
+                Checks if the exit has been reached; if so, returns True.
+
+                Determines all possible moves based on unvisited neighbors and open walls.
+
+                Recursively explores each possible move:
+
+                If a valid path is found, returns True.
+
+                If a dead end is reached, backtracks by undoing the move.
+
+                If no path is found, returns False.
+
+        solve(self)
+
+            Public method that initiates the maze-solving process.
+
+            Returns:
+
+                bool: True if a solution exists, otherwise False.
